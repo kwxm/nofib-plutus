@@ -57,7 +57,7 @@ A number of problems arose while I was porting the programs.
       * -fno-specialise
       * -fno-spec-constr
   
-  *  but you may also need some or all of 
+  *  ... but you may also need some or all of 
 
       * -fexpose-all-unfoldings
       * -fno-ignore-interface-pragmas
