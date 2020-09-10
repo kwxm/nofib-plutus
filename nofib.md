@@ -2,7 +2,7 @@
 
 The `nofib` repository contains 3 main subdirectories: `real` (realistic programs),
 `spectral` (slightly less realistic programs), and `imaginary` (rather trivial programs).
-Here are some brief notes on the various progams contained in those directories
+Here are some brief notes on the various programs contained in those directories.
 
 ### real
 
@@ -333,22 +333,22 @@ Here are some brief notes on the various progams contained in those directories
 
 *    gen_regexps
      * "Generate all the expansions of a generalised regular expression.".
-             Very fast.
+        Very fast.
 
       
 *    integrate
-     *    Numeric integration of xy over an 8x8 grid. Uses Doubles.
+     * Numeric integration of xy over an 8x8 grid. Uses Doubles.
 
        
 
 *   kahan
      * "Implementation of Kahan summation algorithm that tests performance
-             of tight loops involving unboxed arrays and floating point arithmetic."
+        of tight loops involving unboxed arrays and floating point arithmetic."
           
 
 *   paraffins
      * "The Paraffins problem is to generate all distinct paraffins of a given size.
-            It is essentially an unrooted-tree isomorphism problem."
+        It is essentially an unrooted-tree isomorphism problem."
           
 
 *   primes
