@@ -242,7 +242,6 @@ uniform (n:ns) (r:rs) = if t == n then t: uniform ns rs
 
 ---------------- Main ----------------
 
-
 -- Various test inputs.  The Haskell version easily manages numbers up
 -- to 200 digits, but we can't get beyond about 70 digits on the CEK machine.
 -- Interestingly, memory consumption on the CK machine is essentially flat and
