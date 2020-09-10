@@ -2,7 +2,7 @@
 
 The `nofib` repository contains 3 main subdirectories: `real` (realistic programs),
 `spectral` (slightly less realistic programs), and `imaginary` (rather trivial programs).
-Here are some brief notes on the various progams contained in those directories
+Here are some brief notes on the various programs contained in those directories.
 
 ### real
 
