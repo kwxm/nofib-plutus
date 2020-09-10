@@ -22,11 +22,11 @@ The programs that I've ported so far are
   * lastpiece
   * primetest
 
-Apart from `knights` these all consist of a single source file.
-The `primetest` program originally consisted of several Literate
-Haskell source files, but I converted it into a single file
-and removed most of the literate stuff.  All of the source
-files are contained in the relevant `app` subdirectory.
+These are all from the `spectral` subdirectory.  Apart from `knights` these all
+consist of a single source file.  The `primetest` program originally consisted
+of several Literate Haskell source files, but I converted it into a single file
+and removed most of the literate stuff.  All of the source files are contained
+in the relevant `app` subdirectory.
 
 The programs have all been converted into standalone programs which it should be
 possible to run by typing `stack run` in the relcevant directory: this produces
