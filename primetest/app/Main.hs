@@ -302,7 +302,6 @@ main = do
 main1 :: IO ()
 main1 = mapM_ (putStrLn . show) $ process input initState
 
-
 -- The @process@ function takes a list of input numbers
 -- and produces a list of output results.
 {-# INLINABLE process #-}
