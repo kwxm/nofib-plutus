@@ -77,18 +77,17 @@ A number of problems arose while I was porting the programs.
   (see [nofib.md](./nofib.md)).  Plutus Core doesn't support these types
   at all, so I've ignored all of these programs.
 
-  * **Characters.** Quite a few of the programs use the `Char` type
-  quite extensively.  Plutus Core currently provides only limited
-  support for characters, so these programs also mostly have had
-  to be ignored (except for the `clausify` program, which used
-  characters for variable IDs; I've replaced these with `Integer`
-  IDs).  Some more support for characters might be usesful, in particular
+  * **Characters.** Quite a few of the programs use the `Char` type quite
+  extensively.  Plutus Core currently provides only limited support for
+  characters, so these programs also mostly have had to be ignored (except for
+  the `clausify` program, which used characters for variable IDs; I've replaced
+  these with `Integer` IDs).  Some more support for characters might be usesful
+  (see SCP-1163), in particular
 
      * Instances of `Eq` and `Ord` for `Char`.
      * Conversions to and from `Integer` (ie, `chr` and `ord`).
      * Perhaps easier access to individual characters within strings.
 
-   See SCP-1163.
 
   * **Laziness.** A number of the programs use laziness, in particular
       infinite lists.  This has necessitated some rewriting.
