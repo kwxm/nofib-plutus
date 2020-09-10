@@ -289,13 +289,14 @@ probablyPrime = Tx.True
 numTests :: Integer
 numTests = 100
 
+-- Initialise the RNG
 {-# INLINABLE initState #-}
 initState :: RNGstate
 initState = initRNG 111 47
 
 main :: IO ()
 main = do
-    let code = Tx.getPlc $ $$(Tx.compile [|| process input  initState ||])
+    let code = Tx.getPlc $ $$(Tx.compile [|| process input initState ||])
     mapM_ putStrLn $ unindent . PLC.prettyPlcClassicDebug $ code
 
 main1 :: IO ()
