@@ -107,8 +107,3 @@ tourFinished board
    = (noPieces board == (sze*sze)) && (canJumpFirst board)
      where
         sze = sizeBoard board
-
---Tx.makeLift ''Direction
-
-data T = T Tx.Bool
-Tx.makeLift ''T
