@@ -56,8 +56,8 @@ A number of problems arose while I was porting the programs.
       * -fno-strictness
       * -fno-specialise
       * -fno-spec-constr
-
-  but may also need some or all of 
+  
+  *  but may also need some or all of 
 
       * -fexpose-all-unfoldings
       * -fno-ignore-interface-pragmas
