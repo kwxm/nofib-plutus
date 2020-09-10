@@ -78,7 +78,7 @@ secondLast l =
    ts as the new starting position.  In the strict world this will *fail* if the
    length of ts is 1.  The lazy version got away with this because the starting
    position is never examined in that case (possibly just through luck: with
-   enough backtracking that might still happen.  To solve this we have to store
+   enough backtracking that might still happen).  To solve this we have to store
    the starting position as a Maybe value, deferring any error until we actually
    look at it.
 -}
