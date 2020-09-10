@@ -289,10 +289,8 @@ probablyPrime = Tx.True
 numTests :: Integer
 numTests = 100
 
-type State = RNGstate
-
 {-# INLINABLE initState #-}
-initState :: State
+initState :: RNGstate
 initState = initRNG 111 47
 
 main :: IO ()
@@ -304,8 +302,8 @@ main1 :: IO ()
 main1 = mapM_ (putStrLn . show) $ process input initState
 
 
--- The @process@ function takes a list of input numbers and produces a list
--- of output results.
+-- The @process@ function takes a list of input numbers
+-- and produces a list of output results.
 {-# INLINABLE process #-}
 process :: [Integer] -> RNGstate -> [Result]
 process input r =
@@ -314,29 +312,3 @@ process input r =
       n:ns -> case multiTest numTests r n
               of (True, r')  -> Tx.trace "   Probably prime" $ probablyPrime : process ns r'
                  (False, r') -> Tx.trace "   Composite" $ composite : process ns r'
-
-                                
-          
-{-
--- To do this we consider each input item in turn in @doInput@; this
--- passes along the @state@.
-doInput :: State -> [Integer] -> [Result]
-doInput s []     = []
-doInput s (l:ls) = doItem l (\s -> doInput s ls) s
-
--- The @doItem@ function processes an individual item.
-{-# INLINABLE doItem #-}
-doItem :: Integer -> (State -> [Result]) -> State -> [Result]
-doItem n cont r = trace "doItem" $ 
-    if t
-    then Tx.trace "Probably prime" $ probablyPrime : rest
-    else Tx.trace "Composite" $ composite : rest
-        where 
-              rest    = cont r'
--}
- -- [4125636888562548868221559797461449]
---         8987964267331664557]
- --444, 4 ,17331, 17, 1929475734529795, 95823752743877
---        , 2378527437234241111111777717111111111111111171111111111111111111
---        , 23785274372342411111117777171111111111111111711111111111111111111111111111111111111111111111111111111111111
--- [712631725361563, 3471784792]
