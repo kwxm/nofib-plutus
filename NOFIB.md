@@ -63,7 +63,7 @@ Here are some brief notes on the various programs contained in those directories
 
 
 *   hidden
-     * Looks like hidden line elmination.  Uses Float.  543 lines.
+     * Looks like hidden line elimination.  Uses Float.  543 lines.
 
 
 *   hpg
@@ -232,11 +232,11 @@ Here are some brief notes on the various programs contained in those directories
 
 
 *   last-piece
-     * "Last piece puzzle."  Appparently solving a tricky jigsaw puzzle. Lots of lists.
+     * "Last piece puzzle."  Apparently solving a tricky jigsaw puzzle. Lots of lists.
 
 
 *    lcss
-     * Longest common susequence algorithm.
+     * Longest common subsequence algorithm.
 
 
 *    life
@@ -284,7 +284,7 @@ Here are some brief notes on the various programs contained in those directories
 
 
 *    rewrite
-     * Rewriting system.  636 lines of lhs.  Unifaiction etc.
+     * Rewriting system.  636 lines of lhs.  Unification etc.
 
 
        
@@ -301,7 +301,7 @@ Here are some brief notes on the various programs contained in those directories
 
 
 *    sorting
-     * Implementations of multiple sorting algortihms.  Needs a big input.
+     * Implementations of multiple sorting algorithms.  Needs a big input.
 
 
 *    sphere

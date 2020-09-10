@@ -1,7 +1,7 @@
 ## `nofib` benchmarks for Plutus
 
 The [nofib](https://github.com/ghc/nofib) benchmark suite contains
-a number of "realistic" Haskell progams used for benchmarking.
+a number of "realistic" Haskell programs used for benchmarking.
 See [this paper](https://downloads.haskell.org/ghc/papers/nofib.ps.gz) (ps.gz)
 for more information.  Brief notes on all of the programs can be found
 in [NOFIB.md](./NOFIB.md).
@@ -9,9 +9,9 @@ in [NOFIB.md](./NOFIB.md).
 This repository contains versions of some of these programs as
 Plutus programs.  The nofib programs are generally quite old
 (mostly written in the early 1990s) and don't bear much resemblance
-to typical modenr Haskell programs (which may be an advantage,
+to typical modern Haskell programs (which may be an advantage,
 since they should be more acceptable to the Plutus compiler).
-I've resisted the tempation to modernise the programs, except
+I've resisted the temptation to modernise the programs, except
 that most of them have no type signatures for functions and
 I've added signatures (sometimes less general than they could be).
 
@@ -29,12 +29,12 @@ and removed most of the literate stuff.  All of the source files are contained
 in the relevant `app` subdirectory.
 
 The programs have all been converted into standalone programs which it should be
-possible to run by typing `stack run` in the relcevant directory: this produces
+possible to run by typing `stack run` in the relevant directory: this produces
 textual PLC output which I've been running via the `plc` command, but it would
 be straightforward to have the CEK machine execute the code directly.  Paths to
 various `plutus-*` libraries will need to be updated in `stack.yaml`.
 
-**WARNING** The `lastpiece` program solves a fixed-size puzzzle.  The Haskell
+**WARNING** The `lastpiece` program solves a fixed-size puzzle.  The Haskell
 version runs quite quickly, but on the CEK machine the Plutus Core version
 quickly runs out of memory. It may be possible to fix this, but in the meantime
 `lastpiece` shouldn't be used for benchmarking.
@@ -81,7 +81,7 @@ A number of problems arose while I was porting the programs.
   extensively.  Plutus Core currently provides only limited support for
   characters, so these programs also mostly have had to be ignored (except for
   the `clausify` program, which used characters for variable IDs; I've replaced
-  these with `Integer` IDs).  Some more support for characters might be usesful
+  these with `Integer` IDs).  Some more support for characters might be useful
   (see SCP-1163), in particular
 
      * Instances of `Eq` and `Ord` for `Char`.
