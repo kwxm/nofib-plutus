@@ -119,7 +119,7 @@ data RNGstate = RNGstate Integer Integer
 {- **CAUTION**.  Many functions have to return a pair (x, newState) containing their
    actual result and an updated RNG state.  Don't use let-bindings to examine these:
    if you say `let (x,r') = complicatedFunction m n r` then `complicatedFunction`
-   is evaluated when you looks at x and also when you look at r', doubling the
+   is evaluated when you look at x and also when you look at r', doubling the
    amount of time and memory required.  This is due to a restriction in the PlutusTx
    plugin (non-strict let-bindings): to avoid it, use `case` instead:
    `case complicatedFunction m n r of ...` -}
