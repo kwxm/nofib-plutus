@@ -4,7 +4,7 @@ The [nofib](https://github.com/ghc/nofib) benchmark suite contains
 a number of "realistic" Haskell progams used for benchmarking.
 See [this paper](https://downloads.haskell.org/ghc/papers/nofib.ps.gz) (ps.gz)
 for more information.  Brief notes on all of the programs can be found
-in [nofib.md](./nofib.md).
+in [NOFIB.md](./NOFIB.md).
 
 This repository contains versions of some of these programs as
 Plutus programs.  The nofib programs are generally quite old
@@ -74,7 +74,7 @@ A number of problems arose while I was porting the programs.
   to `Integer`.  This has involved re-implementing some functions (see below).
 
   * **Floats.**  Many of the programs use the `Float` and `Double` types
-  (see [nofib.md](./nofib.md)).  Plutus Core doesn't support these types
+  (see [NOFIB.md](./NOFIB.md)).  Plutus Core doesn't support these types
   at all, so I've ignored all of these programs.
 
   * **Characters.** Quite a few of the programs use the `Char` type quite
