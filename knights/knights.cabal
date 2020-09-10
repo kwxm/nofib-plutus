@@ -1,0 +1,104 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 872bf960919fb2e162b58b709c7965e1cf734437b9dbce65b394e7f299f35dea
+
+name:           knights
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/knights#readme>
+homepage:       https://github.com/githubuser/knights#readme
+bug-reports:    https://github.com/githubuser/knights/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2020 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/knights
+
+library
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_knights
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.9 && <5,
+      plutus-core -any,
+      plutus-tx -any,
+      plutus-tx-plugin -any
+  default-language: Haskell2010
+  ghc-options: -Wall -Wnoncanonical-monad-instances
+               -Wincomplete-uni-patterns -Wincomplete-record-updates
+               -Wredundant-constraints -Widentities
+                 -- See Plutus Tx readme
+--               -fobject-code
+--               -fexpose-all-unfoldings
+--               -fno-worker-wrapper
+--               -fno-ignore-interface-pragmas
+--               -fno-omit-interface-pragmas
+--               -fno-strictness
+--               -fno-specialise
+--               -fno-spec-constr
+
+executable knights-exe
+  main-is: Main.hs
+  other-modules:
+      ChessSetArray
+      ChessSetList
+      KnightHeuristic
+      Queue
+      Sort
+      Paths_knights
+      Utils
+  hs-source-dirs:
+      app
+  ghc-options: -Wall -Wnoncanonical-monad-instances
+               -Wincomplete-uni-patterns -Wincomplete-record-updates
+               -Wredundant-constraints -Widentities
+                 -- See Plutus Tx readme
+               -fobject-code
+               -fno-worker-wrapper
+               -fexpose-all-unfoldings
+               -fno-ignore-interface-pragmas
+               -fno-omit-interface-pragmas
+               -fno-strictness
+               -fno-specialise
+               -fno-spec-constr
+  build-depends:
+      base >=4.9 && <5,
+      plutus-core -any,
+      plutus-tx -any,
+      plutus-tx-plugin -any,
+      pretty -any,
+      containers -any,
+      bytestring -any,
+      array -any
+  default-language: Haskell2010
+
+test-suite knights-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_knights
+  hs-source-dirs:
+      test
+  ghc-options: -Wall -Wnoncanonical-monad-instances
+               -Wincomplete-uni-patterns -Wincomplete-record-updates
+               -Wredundant-constraints -Widentities
+                 -- See Plutus Tx readme
+               -fobject-code -fno-ignore-interface-pragmas -fno-omit-interface-pragmas
+  build-depends:
+      base >=4.7 && <5
+    , knights
+  default-language: Haskell2010
