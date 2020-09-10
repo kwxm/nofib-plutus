@@ -45,7 +45,6 @@ memory.  These inputs could be changed if required.  Most programs also
 can also be run directly as Haskell programs with suitable modifications (often
 already contained in the source file, possibly commented out).
 
-The `lastpiece`
 
 ### Problems
 A number of problems arose while I was porting the programs.
@@ -54,16 +53,16 @@ A number of problems arose while I was porting the programs.
   the compilation flags right, particularly in programs involving
   multiple files.  You generally seem to be able to get away with
 
-   * -fno-strictness
-   * -fno-specialise
-   * -fno-spec-constr
+      * -fno-strictness
+      * -fno-specialise
+      * -fno-spec-constr
 
   but may also need some or all of 
 
-   * -fexpose-all-unfoldings
-   * -fno-ignore-interface-pragmas
-   * -fno-omit-interface-pragmas
-   * -fno-worker-wrapper
+      * -fexpose-all-unfoldings
+      * -fno-ignore-interface-pragmas
+      * -fno-omit-interface-pragmas
+      * -fno-worker-wrapper
 
    especially if there are multiple source files (in that case I found it best
    to put the flags in the cabal file since it was impossible to get them right
