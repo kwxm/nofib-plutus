@@ -23,6 +23,8 @@ module ChessSetList(Tile,
 ) where
 
 import           Language.PlutusTx.Prelude as Tx hiding (init)
+
+
 type Tile     = (Integer,Integer)
 
 data ChessSet = Board
