@@ -48,13 +48,11 @@ divMod a b = (a `divideInteger` b, a `remainderInteger` b)
 -- This satisfies:
 -- \[@makeNumber@ \, @b@ \, [x_0,\,x_1,\,\ldots,\,x_n]
 --  = x_0.@b@^n + x_1.@b@^{n-1} + \cdots + x_n.@b@^0\]
-
 {-# INLINABLE makeNumber #-}
 makeNumber :: Integer -> [Integer] -> Integer
 makeNumber b = foldl f 0 where f a x = a * b + x
 
 -- The (left and right) inverse of @makeNumber@ is @chop@.
-
 {-# INLINABLE chop #-}
 chop :: Integer -> Integer -> [Integer]
 chop b = chop' []
@@ -71,7 +69,6 @@ chop b = chop' []
    storage, it should be a candidate for being a built-in within the
    Haskell library.
 -}
-
 {-# INLINABLE powerMod #-}
 powerMod :: Integer -> Integer -> Integer -> Integer
 powerMod a b m =
@@ -94,7 +91,6 @@ powerMod a b m =
 
    My implementation uses Newton's method.
 -}
-
 {-# INLINABLE cubeRoot #-}
 cubeRoot :: Integer -> Integer
 cubeRoot x = until satisfy improve x
@@ -114,7 +110,6 @@ log2 = fromIntegral . length . chop 2
 ---------------- Random ----------------
 
 data RNGstate = RNGstate Integer Integer
-
 
 {- **CAUTION**.  Many functions have to return a pair (x, newState) containing their
    actual result and an updated RNG state.  Don't use let-bindings to examine these:
@@ -185,7 +180,6 @@ singleTest n kq r =  -- Tx.trace "singleTest" $
 
 --The function @findKQ@ takes an odd integer $n$ and returns the tuple
 -- $(k,q)$ such that $n = q2^k+1$.
-
 {-# INLINABLE findKQ #-}
 findKQ :: Integer -> (Integer, Integer)
 findKQ n = f (0, (n-1))
@@ -194,8 +188,6 @@ findKQ n = f (0, (n-1))
               then f (k+1, d)
               else (k, q)
                   where (d,r) = q `divMod` 2
-
-
 
 -- Perform k single tests on the integer n
 {-# INLINABLE multiTest #-}
@@ -231,7 +223,6 @@ boundedRandom n r = (makeNumber 65536 (uniform ns rs), r')
 -- The @uniform@ function generates a sequence of @Integer@'s such that,
 -- when considered as a sequence of digits, we generate a number uniform
 -- in the range @0..ns@ from the random numbers @rs@.
-
 {-# INLINABLE uniform #-}
 uniform :: [Integer] -> [Integer] -> [Integer]
 uniform [n]    [r]    = [r `remainderInteger` n]
