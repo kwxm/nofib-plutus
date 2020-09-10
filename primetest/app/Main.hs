@@ -133,9 +133,9 @@ initRNG s1 s2 =
     else Tx.trace "randomInts: Bad first seed." $ Tx.error () -- error "randomInts: Bad first seed."
 
 
--- Make a single random integer, returning that and the updated state.
--- In the original version this was an infinite list of random numbers, but
--- that's not a good idea in the strict world.
+-- Make a single random integer, returning that and the updated state.  In the
+-- original version this was an infinite list of random numbers, but that's not
+-- a good idea in the strict world.
 {-# INLINABLE getRandom #-}
 getRandom :: RNGstate -> (Integer, RNGstate)
 getRandom (RNGstate s1 s2) = 
