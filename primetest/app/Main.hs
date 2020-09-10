@@ -64,13 +64,13 @@ chop b = chop' []
               else chop' (r:a) q
                   where (q,r) = n `divMod` b
 
+
 {- The following function @powerMod@ calculates @a^b `mod` m@. I suspect
    that this is the critical function in the benchmarking process, and
    given that it can be computed {\em without} a great deal of extra
    storage, it should be a candidate for being a built-in within the
    Haskell library.
 -}
-
 
 {-# INLINABLE powerMod #-}
 powerMod :: Integer -> Integer -> Integer -> Integer
