@@ -18,7 +18,7 @@ I've added signatures (sometimes less general than they could be).
 The programs that I've ported so far are
 
   * clausify
-  * constraints (rename to `constraints-plutus` to avoid a package name clash)
+  * constraints (renamed to `constraints-plutus` to avoid a package name clash)
   * knights
   * lastpiece
   * primetest
