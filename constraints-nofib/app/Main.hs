@@ -99,7 +99,7 @@ main2 :: IO()  -- Haskell version
 main2 = do 
   args <- getArgs
   case args of
-    [] -> putStrLn "Inetger parameter expected"
+    [] -> putStrLn "Integer parameter expected"
     arg:_ -> do
               let n = read arg :: Integer
                   try algorithm = print (nqueens n algorithm)
