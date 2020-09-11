@@ -82,10 +82,13 @@ algorithms = [bm]
 boardSize :: Integer
 boardSize = 5
 
+{-# INLINABLE nqueens #-}
+nqueens :: Integer -> Labeler -> Integer
+nqueens n algorithm = length (search algorithm (queens n))
+
+
 main :: IO ()
 main = main1
-
-
              
 main1 :: IO ()  -- Compile a Plutus Core version
 main1 = do
@@ -102,10 +105,6 @@ main2 = do
                   try algorithm = print (nqueens n algorithm)
               forM_ [1..240] $ const $ do
                 sequence_ (map try algorithms)
-
-{-# INLINABLE nqueens #-}
-nqueens :: Integer -> Labeler -> Integer
-nqueens n algorithm = length (search algorithm (queens n))
 
 -- Only for textual output of PLC scripts
 unindent :: PLC.Doc ann -> [String]
