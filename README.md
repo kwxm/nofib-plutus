@@ -18,6 +18,7 @@ I've added signatures (sometimes less general than they could be).
 The programs that I've ported so far are
 
   * clausify
+  * constraints (rename to `constraints-plutus` to avoid a package name clash)
   * knights
   * lastpiece
   * primetest
@@ -45,6 +46,8 @@ memory.  These inputs could be changed if required.  Most programs also
 can also be run directly as Haskell programs with suitable modifications (often
 already contained in the source file, possibly commented out).
 
+Most of the programs contain notes about the time/memory usage of the Plutus
+vesrion with various inputs. These are usually near the `Main` function.
 
 ### Problems
 A number of problems arose while I was porting the programs.
@@ -124,3 +127,13 @@ A number of problems arose while I was porting the programs.
   via the Haskell Eq typeclass`.  It turns out that this is because the functions
   are inlined and use matches on literal values internally.  The program does contain
   uses of `Eq`, but they don't appear in the source.
+
+
+  * **Miscellaneous**
+     * Uses of `[a..b]` fail with an "no unfolding" error for `GHC.Integer.Type.gtInteger#`
+       while compiling `GHC.Enum.enumDeltaToInteger1FB`.
+     * Trying to use unary negation gives `Reference to a name which is not a local, 
+       a builtin, or an external INLINABLE function: Variable GHC.Integer.Type.negateInteger`.
+       Use `0-n` instead of `-n` to fix this. Maybe we need this in the PlutusTx prelude.
+     * The PlutusTx prelude redefines `elem` but not `notElem`, which gets re-exported from
+       the standard prelude.  That was a bit confusing.
