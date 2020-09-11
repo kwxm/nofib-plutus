@@ -166,7 +166,10 @@ Here are some brief notes on the various programs contained in those directories
 
 
 *   constraints
-     * Constraint solver solving nxn queens problem.  Slightly interesting.
+     * Constraint solver solving nxn queens problem.  This is quite
+       sophisticated: it has a generic constraint solver which can
+       be fed five different algorithms for solving the problem.
+       These each have different time and space requriements.
 
 
 *   cryptarithm1
